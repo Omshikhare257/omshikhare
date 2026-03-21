@@ -1,0 +1,139 @@
+.footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 64px 0 28px;
+  transition: background 0.35s ease;
+}
+[data-theme='ai'] .footer { border-top-color: rgba(0,255,65,0.2); box-shadow: 0 -4px 30px rgba(0,255,65,0.04); }
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 40px;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+
+.logo-om {
+  font-size: 2rem; line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(0,229,255,0.45)); font-family: serif;
+}
+[data-theme='ai'] .logo-om { filter: drop-shadow(0 0 10px rgba(0,255,65,0.7)); }
+
+.logo-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text); }
+[data-theme='ai'] .logo-name { font-family: 'Share Tech Mono', monospace; text-shadow: 0 0 8px rgba(0,255,65,0.3); }
+
+.footer-tagline { color: var(--text-muted); font-size: 0.84rem; line-height: 1.75; margin-bottom: 16px; }
+[data-theme='ai'] .footer-tagline { font-family: 'Share Tech Mono', monospace; font-size: 0.76rem; }
+
+.footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.social-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'Syne', sans-serif; font-size: 0.76rem; font-weight: 700;
+  padding: 7px 14px; border-radius: 100px; text-decoration: none;
+  transition: all 0.22s; border: 1px solid var(--border);
+  color: var(--text-muted); background: var(--bg3); cursor: pointer;
+}
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+.social-btn.linkedin:hover  { background: rgba(0,119,181,0.15); border-color: rgba(0,119,181,0.4); color: #0a9fd8; }
+.social-btn.email:hover     { background: rgba(0,229,255,0.08); border-color: rgba(0,229,255,0.3); color: var(--accent); }
+.social-btn.opramix:hover   { background: rgba(0,229,255,0.1);  border-color: rgba(0,229,255,0.4); color: var(--accent); }
+
+[data-theme='ai'] .social-btn { border-radius: 2px; font-family: 'Share Tech Mono', monospace; border-color: rgba(0,255,65,0.15); }
+[data-theme='ai'] .social-btn:hover { transform: none; }
+[data-theme='ai'] .social-btn.linkedin:hover,
+[data-theme='ai'] .social-btn.email:hover,
+[data-theme='ai'] .social-btn.opramix:hover {
+  background: rgba(0,255,65,0.07); border-color: rgba(0,255,65,0.4);
+  color: var(--accent); box-shadow: 0 0 12px rgba(0,255,65,0.15);
+}
+
+.email-dropdown-wrap { position: relative; }
+.email-chevron { transition: transform 0.25s ease; opacity: 0.6; flex-shrink: 0; }
+.email-chevron.open { transform: rotate(180deg); opacity: 1; }
+
+.email-dropdown {
+  position: absolute; top: calc(100% + 10px); left: 0;
+  min-width: 260px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  z-index: 1000; animation: emailDropIn 0.18s ease;
+}
+@keyframes emailDropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+[data-theme='ai'] .email-dropdown {
+  border-radius: 4px; border-color: rgba(0,255,65,0.2);
+  background: rgba(0,13,0,0.97); box-shadow: 0 8px 32px rgba(0,255,65,0.1);
+}
+
+.email-dropdown-label {
+  font-family: 'Syne', sans-serif; font-size: 0.62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--text-muted); padding: 4px 10px 8px;
+}
+[data-theme='ai'] .email-dropdown-label { font-family: 'Share Tech Mono', monospace; color: rgba(0,255,65,0.5); }
+
+.email-option {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 9px 12px; border-radius: 10px; text-decoration: none; transition: all 0.18s; cursor: pointer;
+}
+.email-option:hover { background: var(--bg3); }
+[data-theme='ai'] .email-option { border-radius: 2px; }
+[data-theme='ai'] .email-option:hover { background: rgba(0,255,65,0.06); }
+
+.email-option-label {
+  font-family: 'Syne', sans-serif; font-size: 0.76rem; font-weight: 700; color: var(--text);
+}
+[data-theme='ai'] .email-option-label { font-family: 'Share Tech Mono', monospace; color: var(--accent); text-shadow: 0 0 6px rgba(0,255,65,0.4); }
+
+.email-option-addr { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--accent); }
+[data-theme='ai'] .email-option-addr { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; }
+
+.footer-links-group h4 {
+  font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;
+}
+[data-theme='ai'] .footer-links-group h4 { font-family: 'Share Tech Mono', monospace; color: var(--accent); text-shadow: 0 0 6px rgba(0,255,65,0.3); }
+[data-theme='ai'] .footer-links-group h4::before { content: '// '; opacity: 0.5; }
+
+.footer-link {
+  display: block; background: none; border: none;
+  color: var(--text-muted); font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem; padding: 3px 0; cursor: pointer;
+  text-align: left; transition: color 0.2s; line-height: 1.9;
+}
+.footer-link:hover { color: var(--accent); }
+.footer-link.static { cursor: default; }
+.footer-link.static:hover { color: var(--text-muted); }
+
+[data-theme='ai'] .footer-link { font-family: 'Share Tech Mono', monospace; font-size: 0.76rem; }
+[data-theme='ai'] .footer-link:not(.static):hover { text-shadow: 0 0 6px rgba(0,255,65,0.4); }
+
+.footer-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+[data-theme='ai'] .footer-divider { background: rgba(0,255,65,0.12); }
+
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+}
+.footer-copy, .footer-made { font-size: 0.78rem; color: var(--text-muted); }
+[data-theme='ai'] .footer-copy, [data-theme='ai'] .footer-made { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; }
+
+@media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; } }
+@media (max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; gap: 20px; }
+  .footer { padding: 44px 0 20px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 4px; }
+  .footer-socials { gap: 8px; }
+  .social-btn { font-size: 0.72rem; padding: 6px 11px; }
+  .email-dropdown { min-width: calc(100vw - 40px); left: 50%; transform: translateX(-50%); }
+}
+@media (max-width: 400px) {
+  .footer-link { font-size: 0.78rem; }
+  .logo-name { font-size: 1rem; }
+}

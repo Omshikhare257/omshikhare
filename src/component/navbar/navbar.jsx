@@ -15,6 +15,14 @@ const THEMES = [
   { key: "ai",    label: "AI",    icon: "🤖" },
 ];
 
+const PAGE_TITLES = {
+  home:     "Om Shikhare | AI & ML Developer",
+  about:    "About | Om Shikhare",
+  resume:   "Resume | Om Shikhare",
+  services: "Services | Om Shikhare",
+  contact:  "Contact | Om Shikhare",
+};
+
 export default function Navbar({ activeSection, theme, setTheme }) {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
@@ -41,6 +49,14 @@ export default function Navbar({ activeSection, theme, setTheme }) {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
+
+  // ✅ URL hash + page title update
+  useEffect(() => {
+    if (!activeSection) return;
+    const hash = activeSection === "home" ? "" : `#${activeSection}`;
+    window.history.replaceState(null, "", `/${hash}`);
+    document.title = PAGE_TITLES[activeSection] || "Om Shikhare | AI & ML Developer";
+  }, [activeSection]);
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

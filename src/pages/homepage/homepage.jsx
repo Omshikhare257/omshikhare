@@ -228,12 +228,7 @@ export default function Home() {
 
           <p className="home-desc">
             Passionate developer from Thane, India — building intelligent
-            AI-powered applications and modern full-stack websites. Founder &amp;
-            Tech Lead at{" "}
-            <a href="https://opramix.com" target="_blank" rel="noreferrer"
-              style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}>
-              OPRAMIX Technologies
-            </a>
+            AI-powered applications and modern full-stack websites.
             . Currently pursuing B.Sc. AI &amp; ML at TISS.
           </p>
 

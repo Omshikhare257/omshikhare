@@ -229,7 +229,6 @@ export default function Home() {
           <p className="home-desc">
             Passionate developer from Thane, India — building intelligent
             AI-powered applications and modern full-stack websites.
-            . Currently pursuing B.Sc. AI &amp; ML at TISS.
           </p>
 
           <div className="home-btns">

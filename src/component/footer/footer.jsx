@@ -4,27 +4,6 @@ import "./footer.css";
 const gmailLink = (to, subject, body) =>
   `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-const EMAIL_LIST = [
-  {
-    label: "Personal / Jobs",
-    email: "omjobshikhare@gmail.com",
-    subject: "Job / Freelance Inquiry",
-    body: "Hi Om,\n\nI came across your portfolio and would like to connect.\n\nName: \nSubject: \nMessage: ",
-  },
-  {
-    label: "OpraMix — Tech",
-    email: "omshikhareopramix@gmail.com",
-    subject: "Project Inquiry | OpraMix",
-    body: "Hi Om,\n\nI would like to discuss a project with OPRAMIX.\n\nName: \nSubject: \nMessage: ",
-  },
-  {
-    label: "OpraMix — Official",
-    email: "Opramixtech@gmail.com",
-    subject: "Project Inquiry via Portfolio",
-    body: "Hi OPRAMIX Team,\n\nI found you via Om Shikhare's portfolio.\n\nName: \nCompany: \nSubject: \nMessage: ",
-  },
-];
-
 function EmailDropdown() {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -58,19 +37,16 @@ function EmailDropdown() {
       {open && (
         <div className="email-dropdown">
           <p className="email-dropdown-label">Choose Email</p>
-          {EMAIL_LIST.map((item) => (
-            <a
-              key={item.email}
-              href={gmailLink(item.email, item.subject, item.body)}
-              target="_blank"
-              rel="noreferrer"
-              className="email-option"
-              onClick={() => setOpen(false)}
-            >
-              <span className="email-option-label">{item.label}</span>
-              <span className="email-option-addr">{item.email}</span>
-            </a>
-          ))}
+          
+            href={gmailLink("omjobshikhare@gmail.com", "Job / Freelance Inquiry", "Hi Om,\n\nI came across your portfolio and would like to connect.\n\nName: \nSubject: \nMessage: ")}
+            target="_blank"
+            rel="noreferrer"
+            className="email-option"
+            onClick={() => setOpen(false)}
+          >
+            <span className="email-option-label">Personal / Jobs</span>
+            <span className="email-option-addr">omjobshikhare@gmail.com</span>
+          </a>
         </div>
       )}
     </div>
@@ -96,7 +72,7 @@ export default function Footer() {
               <br />Building intelligent solutions, one line at a time.
             </p>
             <div className="footer-socials">
-              <a
+              
                 href="https://www.linkedin.com/in/om-shikhare-a4377132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noreferrer"
@@ -105,14 +81,6 @@ export default function Footer() {
                 💼 LinkedIn
               </a>
               <EmailDropdown />
-              <a
-                href="https://opramix.com"
-                target="_blank"
-                rel="noreferrer"
-                className="social-btn opramix"
-              >
-                🏢 OpraMix
-              </a>
             </div>
           </div>
 
@@ -137,30 +105,13 @@ export default function Footer() {
           </div>
 
           <div className="footer-links-group">
-            <h4>OPRAMIX Technologies</h4>
-            <a href="https://opramix.com" target="_blank" rel="noreferrer"
-              className="footer-link" style={{ textDecoration: "none" }}>
-              🌐 opramix.com
-            </a>
-            <a href={gmailLink("Opramixtech@gmail.com","Project Inquiry via Portfolio","Hi OPRAMIX Team,\n\nI found you via Om Shikhare's portfolio and would like to discuss a project.\n\nName: \nCompany: \nSubject: \nMessage: ")}
-              target="_blank" rel="noreferrer" className="footer-link" style={{ textDecoration: "none" }}>
-              📧 Opramixtech@gmail.com
-            </a>
-            <a href={gmailLink("omshikhareopramix@gmail.com","Project Inquiry | OpraMix","Hi Om,\n\nI would like to discuss a project with OPRAMIX.\n\nName: \nSubject: \nMessage: ")}
-              target="_blank" rel="noreferrer" className="footer-link" style={{ textDecoration: "none" }}>
-              📧 omshikhareopramix@gmail.com
-            </a>
-            <span className="footer-link static">📱 +91 90044 29232</span>
-            <span className="footer-link static">📍 Kalyan, Maharashtra</span>
-            <span className="footer-link static"
-              style={{ marginTop: "10px", opacity: 0.5, fontSize: "0.7rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-              Personal Contact
-            </span>
-            <a href={gmailLink("omjobshikhare@gmail.com","Job / Freelance Inquiry","Hi Om,\n\nI came across your portfolio and would like to connect.\n\nName: \nSubject: \nMessage: ")}
+            <h4>Contact</h4>
+            <a href={gmailLink("omjobshikhare@gmail.com", "Job / Freelance Inquiry", "Hi Om,\n\nI came across your portfolio and would like to connect.\n\nName: \nSubject: \nMessage: ")}
               target="_blank" rel="noreferrer" className="footer-link" style={{ textDecoration: "none" }}>
               📧 omjobshikhare@gmail.com
             </a>
             <span className="footer-link static">📱 +91 8433959059</span>
+            <span className="footer-link static">📍 Thane, India</span>
             <a href="https://www.linkedin.com/in/om-shikhare-a4377132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank" rel="noreferrer" className="footer-link" style={{ textDecoration: "none" }}>
               💼 LinkedIn Profile
@@ -173,13 +124,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="footer-copy">© 2025 Om Jotiram Shikhare. All rights reserved.</p>
-          <p className="footer-made">
-            Founder &amp; Tech Lead —{" "}
-            <a href="https://opramix.com" target="_blank" rel="noreferrer"
-              style={{ color: "var(--accent)", textDecoration: "none" }}>
-              OPRAMIX Technologies
-            </a>
-          </p>
+          <p className="footer-made">AI & ML Developer · Freelancer</p>
         </div>
       </div>
     </footer>

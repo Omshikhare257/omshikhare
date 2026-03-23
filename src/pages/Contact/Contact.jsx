@@ -12,11 +12,7 @@ export default function Contact() {
           <span className="section-tag">Contact</span>
           <h2 className="section-title">Let's Build Something<br />Together</h2>
           <p className="contact-sub">
-            Available for freelance projects, internships, and collaboration. Reach out personally or via{" "}
-            <a href="https://opramix.com" target="_blank" rel="noreferrer"
-              style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 600 }}>
-              OPRAMIX Technologies
-            </a>. Let's connect!
+            Available for freelance projects, internships, and collaboration. Let's connect!
           </p>
         </div>
 
@@ -24,19 +20,11 @@ export default function Contact() {
 
           <div className="contact-cards">
             {[
-              { icon: "📧", label: "Personal Email",     value: "omjobshikhare@gmail.com",
+              { icon: "📧", label: "Personal Email", value: "omjobshikhare@gmail.com",
                 link: gmailLink("omjobshikhare@gmail.com", "Inquiry from Portfolio", "Hi Om,\n\nName: \nSubject: \nMessage: ") },
-              { icon: "📧", label: "OpraMix — Tech",     value: "omshikhareopramix@gmail.com",
-                link: gmailLink("omshikhareopramix@gmail.com", "Project Inquiry | OpraMix", "Hi Om,\n\nName: \nSubject: \nMessage: ") },
-              { icon: "📧", label: "OpraMix — Official", value: "Opramixtech@gmail.com",
-                link: gmailLink("Opramixtech@gmail.com", "Project Inquiry via Portfolio", "Hi OPRAMIX Team,\n\nName: \nCompany: \nSubject: \nMessage: ") },
-              { icon: "📱", label: "Phone",              value: "+91 8433959059" },
-              { icon: "📱", label: "OpraMix Phone",      value: "+91 90044 29232" },
-              { icon: "📍", label: "Location",           value: "Thane, India" },
-              { icon: "🏢", label: "Company",            value: "OPRAMIX Technologies",
-                link: "https://opramix.com" },
-              { icon: "📍", label: "Company Location",   value: "Kalyan, Maharashtra" },
-              { icon: "💼", label: "LinkedIn",           value: "linkedin.com/in/om-shikhare",
+              { icon: "📱", label: "Phone",          value: "+91 8433959059" },
+              { icon: "📍", label: "Location",       value: "Thane, India" },
+              { icon: "💼", label: "LinkedIn",       value: "linkedin.com/in/om-shikhare",
                 link: "https://www.linkedin.com/in/om-shikhare-a4377132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
             ].map((item) => (
               <div key={item.label} className="info-card">
@@ -74,7 +62,6 @@ export default function Contact() {
                 "REST API Development",
                 "Full-Stack Development",
                 "App Development",
-                "Social Media Marketing (via OpraMix)",
               ].map((o) => (
                 <div key={o} className="offer-item">
                   <span className="offer-check">✓</span> {o}
@@ -90,10 +77,6 @@ export default function Contact() {
               <a href="https://www.linkedin.com/in/om-shikhare-a4377132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank" rel="noreferrer" className="contact-cta-btn secondary">
                 💼 Connect on LinkedIn
-              </a>
-              <a href="https://opramix.com"
-                target="_blank" rel="noreferrer" className="contact-cta-btn opramix">
-                🏢 Visit OpraMix
               </a>
             </div>
           </div>

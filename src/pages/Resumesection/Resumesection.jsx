@@ -2,18 +2,6 @@ import "./Resumesection.css";
 
 const experience = [
   {
-    role: "Founder & Tech Lead",
-    company: "OPRAMIX Technologies",
-    location: "Kalyan, Maharashtra",
-    period: "2025 – Present",
-    type: "Founder",
-    points: [
-      "Co-founded OPRAMIX Technologies — a modern IT solutions company offering Website Development, App Development, AI Tools, and Social Media Marketing.",
-      "Lead the IT department: building websites, web apps, and AI-powered tools for clients.",
-      "Responsible for client acquisition in tech domain, project delivery, and end-to-end development.",
-    ],
-  },
-  {
     role: "Machine Learning Developer",
     company: "Greybath Technology Pvt Ltd",
     location: "Mumbai",

@@ -37,7 +37,7 @@ function EmailDropdown() {
       {open && (
         <div className="email-dropdown">
           <p className="email-dropdown-label">Choose Email</p>
-          
+          <a
             href={gmailLink("omjobshikhare@gmail.com", "Job / Freelance Inquiry", "Hi Om,\n\nI came across your portfolio and would like to connect.\n\nName: \nSubject: \nMessage: ")}
             target="_blank"
             rel="noreferrer"
@@ -72,7 +72,7 @@ export default function Footer() {
               <br />Building intelligent solutions, one line at a time.
             </p>
             <div className="footer-socials">
-              
+              <a
                 href="https://www.linkedin.com/in/om-shikhare-a4377132a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noreferrer"

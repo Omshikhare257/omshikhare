@@ -69,20 +69,6 @@ export default function About() {
             Training in AI & ML from <strong>Tata Institute of Social Sciences (TISS)</strong>.
           </p>
           <p className="about-para">
-            I am the <strong>Founder & Tech Lead</strong> at{" "}
-            <a
-              href="https://opramix.com"
-              target="_blank"
-              rel="noreferrer"
-              style={{ color: "var(--accent)", textDecoration: "none", fontWeight: 700 }}
-            >
-              OPRAMIX Technologies
-            </a>{" "}
-            — a modern IT solutions company based in Kalyan, Maharashtra. At OpraMix, I lead the
-            IT department handling <strong>website development</strong>,{" "}
-            <strong>app development</strong>, and <strong>AI tools development</strong>.
-          </p>
-          <p className="about-para">
             On the <strong>web side</strong>, I build dynamic full-stack applications using React.js,
             Next.js, Node.js, Express.js, Laravel, PHP, and WordPress — with MySQL, SQLite, and
             MongoDB as backends.

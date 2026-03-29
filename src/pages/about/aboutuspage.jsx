@@ -86,8 +86,6 @@ export default function About() {
               { label: "Phone",     value: "+91 8433959059"              },
               { label: "Location",  value: "Thane, India"                },
               { label: "Education", value: "B.Sc. AI & ML — TISS"        },
-              { label: "Company",   value: "OPRAMIX Technologies"        },
-              { label: "Role",      value: "Founder & Tech Lead"         },
               { label: "Available", value: "Freelance & Internship"      },
             ].map((item) => (
               <div key={item.label} className="info-item">

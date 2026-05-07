@@ -243,7 +243,7 @@ export default function Home() {
           <div className="home-stats">
             {[
               { num: "4+",   label: "Internships"   },
-              { num: "28+",  label: "Projects Built" },
+              { num: "29+",  label: "Projects Built" },
               { num: "10+",  label: "Tech Stacks"    },
               { num: "100%", label: "Dedicated"      },
             ].map((s) => (

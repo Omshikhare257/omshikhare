@@ -4,6 +4,7 @@ import "./navbar.css";
 const links = [
   { id: "home",     label: "Home"     },
   { id: "about",    label: "About"    },
+  { id: "projects", label: "Projects" },
   { id: "resume",   label: "Resume"   },
   { id: "services", label: "Services" },
   { id: "contact",  label: "Contact"  },
@@ -18,6 +19,7 @@ const THEMES = [
 const PAGE_TITLES = {
   home:     "Om Shikhare | AI & ML Developer",
   about:    "About | Om Shikhare",
+  projects: "Projects | Om Shikhare",
   resume:   "Resume | Om Shikhare",
   services: "Services | Om Shikhare",
   contact:  "Contact | Om Shikhare",
@@ -50,7 +52,6 @@ export default function Navbar({ activeSection, theme, setTheme }) {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // ✅ URL hash + page title update
   useEffect(() => {
     if (!activeSection) return;
     const hash = activeSection === "home" ? "" : `#${activeSection}`;

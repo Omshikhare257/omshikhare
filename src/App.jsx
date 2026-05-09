@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./component/navbar/navbar";
 import Home from "./pages/homepage/homepage";
 import About from "./pages/about/aboutuspage";
+import Projects from "./pages/Projects/Projects";
 import ResumeSection from "./pages/Resumesection/Resumesection";
 import Services from "./pages/Services/Services";
 import Contact from "./pages/Contact/Contact";
@@ -19,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "resume", "services", "contact"];
+      const sections = ["home", "about", "projects", "resume", "services", "contact"];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -45,6 +46,7 @@ export default function App() {
       <main>
         <section id="home"><Home theme={theme} /></section>
         <section id="about"><About /></section>
+        <section id="projects"><Projects /></section>
         <section id="resume"><ResumeSection /></section>
         <section id="services"><Services /></section>
         <section id="contact"><Contact /></section>

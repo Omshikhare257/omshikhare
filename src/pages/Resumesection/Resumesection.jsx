@@ -9,6 +9,8 @@ const experience = [
     type: "Internship",
     points: [
       "Working as Junior ML Developer — building and deploying ML models for real-world business applications.",
+      "Developed a Document Intelligence System for classification, deep text extraction, contextual analysis, and automated report generation — designed for professionals such as customs officers, legal analysts, and compliance teams.",
+      "Built NLP pipelines for structured data extraction from unstructured documents including PDFs, scanned files, and multi-format uploads.",
     ],
   },
   {
@@ -124,10 +126,11 @@ export default function ResumeSection() {
             </div>
             <div className="freelance-tags">
               {[
-                "Website Development", "React & Next.js Apps",
-                "AI Chatbot Creation",  "ML Model Building",
-                "Python & Streamlit",   "OCR Systems",
-                "Full-Stack Dev",       "REST API Development",
+                "Website Development",   "React & Next.js Apps",
+                "AI Chatbot Creation",   "ML Model Building",
+                "Python & Streamlit",    "OCR Systems",
+                "Full-Stack Dev",        "REST API Development",
+                "Document Intelligence", "NLP & Text Extraction",
               ].map((f) => (
                 <span key={f} className="freelance-tag">{f}</span>
               ))}

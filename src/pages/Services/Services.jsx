@@ -2,30 +2,69 @@ import { useState } from "react";
 import "./Services.css";
 
 const services = [
-  { icon: "🌐", title: "Website Development",          cat: "Web",
+  {
+    icon: "🌐",
+    title: "Website Development",
+    cat: "Web",
     desc: "Modern, responsive, professional websites from scratch — landing pages, business sites, full-stack web apps with clean UI, fast performance, and SEO-friendly structure.",
-    tags: ["HTML5","CSS3","JavaScript","React.js","PHP","MySQL"] },
-  { icon: "⚛️", title: "React & Next.js Development",  cat: "Web",
+    tags: ["HTML5", "CSS3", "JavaScript", "React.js", "PHP", "MySQL"],
+  },
+  {
+    icon: "⚛️",
+    title: "React & Next.js Development",
+    cat: "Web",
     desc: "Dynamic, interactive frontends using React.js and Next.js — SPAs, SSR dashboards, admin panels, and product UIs with excellent UX, routing, and performance.",
-    tags: ["React.js","Next.js","Hooks","Context API","Tailwind"] },
-  { icon: "🗄️", title: "Full-Stack Web Development",   cat: "Web",
+    tags: ["React.js", "Next.js", "Hooks", "Context API", "Tailwind"],
+  },
+  {
+    icon: "🗄️",
+    title: "Full-Stack Web Development",
+    cat: "Web",
     desc: "Complete websites with frontend + backend — Node.js, Express.js, Laravel, WordPress, CRUD apps, database-connected platforms, and REST API integrations.",
-    tags: ["Node.js","Express.js","Laravel","WordPress","REST API"] },
-  { icon: "🤖", title: "AI Chatbot Development",        cat: "AI",
+    tags: ["Node.js", "Express.js", "Laravel", "WordPress", "REST API"],
+  },
+  {
+    icon: "🤖",
+    title: "AI Chatbot Development",
+    cat: "AI",
     desc: "Custom AI-powered chatbots using OpenAI API, Transformers, Llama, and Ollama — ChatGPT-like structures built from scratch or via API.",
-    tags: ["OpenAI API","Llama","Ollama","Transformers","Python"] },
-  { icon: "🧠", title: "Machine Learning Solutions",    cat: "AI",
+    tags: ["OpenAI API", "Llama", "Ollama", "Transformers", "Python"],
+  },
+  {
+    icon: "🧠",
+    title: "Machine Learning Solutions",
+    cat: "AI",
     desc: "Design and deploy ML models using TensorFlow, PyTorch, Keras, and Scikit-learn for prediction, classification, automation, and data-driven decision making.",
-    tags: ["TensorFlow","PyTorch","Keras","Scikit-learn","Python"] },
-  { icon: "🔍", title: "OCR Systems",                   cat: "AI",
+    tags: ["TensorFlow", "PyTorch", "Keras", "Scikit-learn", "Python"],
+  },
+  {
+    icon: "📄",
+    title: "Document Intelligence & NLP",
+    cat: "AI",
+    desc: "Advanced document classification, deep text extraction, contextual analysis, and automated downloadable report generation — purpose-built for professionals such as customs officers, legal analysts, compliance teams, and government officers.",
+    tags: ["NLP", "spaCy", "Transformers", "PDF Extraction", "Report Generation", "Classification"],
+  },
+  {
+    icon: "🔍",
+    title: "OCR Systems",
+    cat: "AI",
     desc: "Build Optical Character Recognition systems to extract text from images, PDFs, and scanned documents — ideal for digitizing records and automating data entry.",
-    tags: ["OCR","OpenCV","Tesseract","Pillow","Python"] },
-  { icon: "🐍", title: "Python & Streamlit Apps",       cat: "AI",
+    tags: ["OCR", "OpenCV", "Tesseract", "Pillow", "Python"],
+  },
+  {
+    icon: "🐍",
+    title: "Python & Streamlit Apps",
+    cat: "AI",
     desc: "Complete Python applications and AI-powered dashboards using Streamlit. Deploy ML models as interactive web apps with data visualizations and real-time analysis.",
-    tags: ["Python","Streamlit","Pandas","Seaborn","Plotly"] },
-  { icon: "📊", title: "Data Analysis & Visualization", cat: "AI",
+    tags: ["Python", "Streamlit", "Pandas", "Seaborn", "Plotly"],
+  },
+  {
+    icon: "📊",
+    title: "Data Analysis & Visualization",
+    cat: "AI",
     desc: "Analyze datasets and create clear, actionable visualizations. Understand trends, patterns, and business insights using Python and Tableau.",
-    tags: ["Pandas","NumPy","Matplotlib","Seaborn","Tableau"] },
+    tags: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Tableau"],
+  },
 ];
 
 const pythonLibs = [
@@ -35,11 +74,15 @@ const pythonLibs = [
   { name: "TensorFlow",   use: "Deep Learning"      },
   { name: "PyTorch",      use: "Neural Nets"        },
   { name: "Keras",        use: "Model Building"     },
+  { name: "spaCy",        use: "NLP Pipeline"       },
+  { name: "NLTK",         use: "Text Processing"    },
+  { name: "Transformers", use: "LLMs & BERT"        },
   { name: "Matplotlib",   use: "Visualization"      },
   { name: "Seaborn",      use: "Statistical Plots"  },
   { name: "Plotly",       use: "Interactive Charts" },
   { name: "OpenCV",       use: "Computer Vision"    },
   { name: "Streamlit",    use: "ML Web Apps"        },
+  { name: "PyMuPDF",      use: "PDF Extraction"     },
   { name: "Jupyter",      use: "Notebooks"          },
 ];
 
@@ -60,19 +103,25 @@ const jsLibs = [
 
 export default function Services() {
   const [filter, setFilter] = useState("All");
-  const filtered = filter === "All" ? services : services.filter((s) => s.cat === filter);
+  const filtered = filter === "All"
+    ? services
+    : services.filter((s) => s.cat === filter);
 
   return (
     <div className="services">
       <div className="container">
+
+        {/* ── Header ── */}
         <div className="services-header">
           <span className="section-tag">Services</span>
           <h2 className="section-title">What I Can<br />Do For You</h2>
           <p className="services-sub">
-            Full-service freelance development — from AI-powered applications to modern websites and everything in between.
+            Full-service freelance development — from AI-powered document intelligence
+            and ML models to modern websites and everything in between.
           </p>
         </div>
 
+        {/* ── Filter Tabs ── */}
         <div className="filter-tabs">
           {[
             { key: "All", label: "🔥 All Services" },
@@ -89,24 +138,33 @@ export default function Services() {
           ))}
         </div>
 
+        {/* ── Services Grid ── */}
         <div className="services-grid">
           {filtered.map((s, i) => (
-            <div className={`service-card ${s.cat.toLowerCase()}`} key={i}>
+            <div
+              className={`service-card ${s.cat.toLowerCase()}`}
+              key={i}
+            >
               <div className="service-top">
                 <span className="service-icon">{s.icon}</span>
-                <span className={`service-cat-badge ${s.cat.toLowerCase()}`}>{s.cat}</span>
+                <span className={`service-cat-badge ${s.cat.toLowerCase()}`}>
+                  {s.cat}
+                </span>
               </div>
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
               <div className="service-tags">
-                {s.tags.map((t) => <span key={t} className="service-tag">{t}</span>)}
+                {s.tags.map((t) => (
+                  <span key={t} className="service-tag">{t}</span>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
+        {/* ── Python & AI + NLP Libraries ── */}
         <div className="tech-section">
-          <h3 className="tech-section-title">🐍 Python & AI Libraries</h3>
+          <h3 className="tech-section-title">🐍 Python, AI & NLP Libraries</h3>
           <div className="tech-grid">
             {pythonLibs.map((lib) => (
               <div className="tech-card" key={lib.name}>
@@ -117,6 +175,7 @@ export default function Services() {
           </div>
         </div>
 
+        {/* ── JS / Web Tech ── */}
         <div className="tech-section">
           <h3 className="tech-section-title">⚛️ JavaScript / Web Tech</h3>
           <div className="tech-grid">
@@ -129,6 +188,7 @@ export default function Services() {
           </div>
         </div>
 
+        {/* ── CTA ── */}
         <div className="services-cta">
           <div className="cta-text">
             <h3>Have a project in mind?</h3>
@@ -136,11 +196,14 @@ export default function Services() {
           </div>
           <button
             className="cta-btn"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Let's Discuss →
           </button>
         </div>
+
       </div>
     </div>
   );

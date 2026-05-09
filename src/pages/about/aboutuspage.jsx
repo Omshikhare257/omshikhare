@@ -5,17 +5,17 @@ const skillGroups = [
     title: "💻 Programming Languages",
     cat: "web",
     skills: [
-      { name: "Python",     level: 95 },
-      { name: "JavaScript", level: 90 },
-      { name: "PHP",        level: 88 },
-      { name: "R Language", level: 82 },
-      { name: "HTML5",      level: 93 },
-      { name: "CSS3",       level: 90 },
-      { name: "SQL",        level: 86 },
+      { name: "Python",      level: 95 },
+      { name: "JavaScript",  level: 90 },
+      { name: "PHP",         level: 88 },
+      { name: "R Language",  level: 82 },
+      { name: "HTML5",       level: 93 },
+      { name: "CSS3",        level: 90 },
+      { name: "SQL",         level: 86 },
     ],
   },
   {
-    title: "🤖 AI & Machine Learning",
+    title: "🤖 AI, ML & NLP",
     cat: "ai",
     skills: [
       { name: "TensorFlow",   level: 82 },
@@ -24,6 +24,8 @@ const skillGroups = [
       { name: "Keras",        level: 80 },
       { name: "Pandas",       level: 92 },
       { name: "NumPy",        level: 92 },
+      { name: "spaCy / NLTK", level: 83 },
+      { name: "Transformers", level: 78 },
       { name: "Streamlit",    level: 88 },
       { name: "Jupyter",      level: 85 },
     ],
@@ -36,7 +38,8 @@ const skillGroups = [
       { name: "Next.js",    level: 78 },
       { name: "Node.js",    level: 75 },
       { name: "Express.js", level: 74 },
-      { name: "Laravel",    level: 72 },
+      { name: "Laravel",    level: 90 },
+      { name: "php",    level: 90 },
       { name: "WordPress",  level: 85 },
       { name: "Bootstrap",  level: 88 },
     ],
@@ -65,28 +68,34 @@ export default function About() {
 
           <p className="about-para">
             I'm <strong>Om Jotiram Shikhare</strong>, an <strong>AI & ML Developer</strong> and{" "}
-            <strong>Web Developer</strong> based in Thane, India. Pursuing a B.Sc. with Vocational
-            Training in AI & ML from <strong>Tata Institute of Social Sciences (TISS)</strong>.
+            <strong>Full-Stack Web Developer</strong> based in Thane, India. Pursuing a B.Sc. with
+            Vocational Training in AI & ML from{" "}
+            <strong>Tata Institute of Social Sciences (TISS)</strong>, with hands-on experience
+            across 3 internships and 7+ deployed projects.
           </p>
+
           <p className="about-para">
-            On the <strong>web side</strong>, I build dynamic full-stack applications using React.js,
-            Next.js, Node.js, Express.js, Laravel, PHP, and WordPress — with MySQL, SQLite, and
-            MongoDB as backends.
+            On the <strong>AI/ML side</strong>, I build intelligent applications — from chatbots
+            using Transformers, Llama, and Ollama, to ML models with TensorFlow, PyTorch, and
+            Scikit-learn. I specialize in <strong>NLP & Document Intelligence</strong> — including
+            document classification, deep text extraction, contextual analysis, and automated
+            report generation for professionals such as customs officers and legal analysts.
           </p>
+
           <p className="about-para">
-            On the <strong>AI/ML side</strong>, I develop chatbots using APIs, Transformers, Llama,
-            and Ollama. I work with TensorFlow, PyTorch, Keras, Scikit-learn, and Streamlit to
-            build intelligent real-world applications.
+            On the <strong>web side</strong>, I build dynamic full-stack applications using
+            React.js, Next.js, Node.js, Express.js, Laravel, PHP, and WordPress — backed by
+            MySQL, SQLite, and MongoDB.
           </p>
 
           <div className="about-info-grid">
             {[
-              { label: "Email",     value: "omjobshikhare@gmail.com"    },
-              { label: "Alt Email", value: "ompythoncode@gmail.com"      },
-              { label: "Phone",     value: "+91 8433959059"              },
-              { label: "Location",  value: "Thane, India"                },
-              { label: "Education", value: "B.Sc. AI & ML — TISS"        },
-              { label: "Available", value: "Freelance & Internship"      },
+              { label: "Email",      value: "omjobshikhare@gmail.com"   },
+              { label: "Alt Email",  value: "ompythoncode@gmail.com"    },
+              { label: "Phone",      value: "+91 8433959059"            },
+              { label: "Location",   value: "Thane, India"              },
+              { label: "Education",  value: "B.Sc. AI & ML — TISS"     },
+              { label: "Available",  value: "Freelance & Internship"    },
             ].map((item) => (
               <div key={item.label} className="info-item">
                 <span className="info-label">{item.label}</span>
@@ -99,11 +108,18 @@ export default function About() {
             <h4 className="comp-title">🏆 Core Competencies</h4>
             <div className="comp-tags">
               {[
-                "Machine Learning & AI", "React.js & Next.js",
-                "Chatbot Engineering",   "Full-Stack Web Dev",
-                "REST API Development",  "OCR Systems",
-                "Database Management",   "AI-driven Automation",
-                "Problem Solving",       "Team Collaboration",
+                "Machine Learning & AI",
+                "NLP & Text Extraction",
+                "Document Intelligence",
+                "React.js & Next.js",
+                "Chatbot Engineering",
+                "Full-Stack Web Dev",
+                "REST API Development",
+                "OCR Systems",
+                "Streamlit Applications",
+                "Database Management",
+                "AI-driven Automation",
+                "Problem Solving",
               ].map((c) => (
                 <span key={c} className="comp-tag">{c}</span>
               ))}
@@ -112,7 +128,9 @@ export default function About() {
 
           <button
             className="about-btn"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Get In Touch
           </button>
@@ -121,7 +139,10 @@ export default function About() {
         {/* ── RIGHT — Skill Cards ── */}
         <div className="about-right">
           {skillGroups.map((group) => (
-            <div className={`skills-card skills-card--${group.cat}`} key={group.title}>
+            <div
+              className={`skills-card skills-card--${group.cat}`}
+              key={group.title}
+            >
               <h3 className="skills-heading">{group.title}</h3>
               {group.skills.map((s) => (
                 <div key={s.name} className="skill-row">
@@ -130,7 +151,10 @@ export default function About() {
                     <span className="skill-pct">{s.level}%</span>
                   </div>
                   <div className="skill-bar">
-                    <div className={`skill-fill ${group.cat}`} style={{ "--w": s.level + "%" }} />
+                    <div
+                      className={`skill-fill ${group.cat}`}
+                      style={{ "--w": s.level + "%" }}
+                    />
                   </div>
                 </div>
               ))}

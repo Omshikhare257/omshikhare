@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./Projects.css";
 
 /* ─────────────────────────────────────────────────
-   BRAND LOGOS
+   BRAND LOGOS — [small icon] + [Name / tagline]
 ───────────────────────────────────────────────── */
 
+/* ── OPRAMIX ── */
 const OpramixLogo = () => (
   <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg"
     className="brand-svg" aria-label="Opramix Logo">
@@ -32,6 +33,7 @@ const OpramixLogo = () => (
   </svg>
 );
 
+/* ── FITZONE ── */
 const FitZoneLogo = () => (
   <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg"
     className="brand-svg" aria-label="FitZone Logo">
@@ -57,6 +59,7 @@ const FitZoneLogo = () => (
   </svg>
 );
 
+/* ── FRINAM ── */
 const FrinamLogo = () => (
   <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg"
     className="brand-svg" aria-label="Frinam Logo">
@@ -77,6 +80,65 @@ const FrinamLogo = () => (
   </svg>
 );
 
+/* ── POWERFIT GYM ── golden yellow dumbbell + wordmark ── */
+const PowerFitLogo = () => (
+  <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg"
+    className="brand-svg" aria-label="PowerFit Gym Logo">
+    <defs>
+      <linearGradient id="pfGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stopColor="#FFD700" />
+        <stop offset="100%" stopColor="#FFB400" />
+      </linearGradient>
+    </defs>
+    {/* Dumbbell */}
+    <rect x="1"  y="10" width="5"  height="20" rx="2" fill="url(#pfGrad)" />
+    <rect x="6"  y="13" width="4"  height="14" rx="1.5" fill="url(#pfGrad)" />
+    <rect x="10" y="17" width="16" height="6"  rx="2" fill="url(#pfGrad)" />
+    <rect x="26" y="13" width="4"  height="14" rx="1.5" fill="url(#pfGrad)" />
+    <rect x="30" y="10" width="5"  height="20" rx="2" fill="url(#pfGrad)" />
+    <line x1="41" y1="6" x2="41" y2="38"
+      stroke="url(#pfGrad)" strokeWidth="1" opacity="0.35" />
+    <text x="48" y="20" fontFamily="'Syne', sans-serif"
+      fontSize="12" fontWeight="800" fill="currentColor"
+      letterSpacing="0.2">PowerFit</text>
+    <text x="48" y="32" fontFamily="'DM Sans', sans-serif"
+      fontSize="5.8" fontWeight="500" fill="currentColor" opacity="0.6"
+      letterSpacing="1.5">GYM &amp; FITNESS</text>
+  </svg>
+);
+
+/* ── VISIONMATCH — eye/lens icon + wordmark ── */
+const VisionMatchLogo = () => (
+  <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg"
+    className="brand-svg" aria-label="VisionMatch Logo">
+    <defs>
+      <linearGradient id="vmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stopColor="#8B5CF6" />
+        <stop offset="100%" stopColor="#6C63FF" />
+      </linearGradient>
+    </defs>
+    {/* Eye outline */}
+    <path d="M2,20 C6,12 12,8 20,8 C28,8 34,12 38,20 C34,28 28,32 20,32 C12,32 6,28 2,20 Z"
+      fill="none" stroke="url(#vmGrad)" strokeWidth="2" />
+    {/* Iris */}
+    <circle cx="20" cy="20" r="6" fill="url(#vmGrad)" opacity="0.2" />
+    <circle cx="20" cy="20" r="6" fill="none" stroke="url(#vmGrad)" strokeWidth="1.8" />
+    {/* Pupil */}
+    <circle cx="20" cy="20" r="2.5" fill="url(#vmGrad)" />
+    {/* Divider */}
+    <line x1="43" y1="6" x2="43" y2="34"
+      stroke="url(#vmGrad)" strokeWidth="1" opacity="0.3" />
+    {/* Wordmark */}
+    <text x="50" y="18" fontFamily="'Syne', sans-serif"
+      fontSize="11" fontWeight="800" fill="currentColor"
+      letterSpacing="0.2">VisionMatch</text>
+    <text x="50" y="30" fontFamily="'DM Sans', sans-serif"
+      fontSize="5.5" fontWeight="500" fill="currentColor" opacity="0.6"
+      letterSpacing="1.2">IMAGE SIMILARITY AI</text>
+  </svg>
+);
+
+/* ── AI/ML logos base ── */
 const AILogoBase = ({ icon, name, tagline, gradId, c1, c2 }) => (
   <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" className="brand-svg">
     <defs>
@@ -101,15 +163,14 @@ const AILogoBase = ({ icon, name, tagline, gradId, c1, c2 }) => (
   </svg>
 );
 
-const DocClassifyLogo   = () => <AILogoBase icon="≡" name="Doc. Analysis"   tagline="NLP · EXTRACTION · REPORT"  gradId="dcGrad"  c1="#a855f7" c2="#ec4899" />;
-const CustomerSegLogo   = () => <AILogoBase icon="⬡" name="Customer Seg."   tagline="ML · CLUSTERING"            gradId="csGrad"  c1="#00e5ff" c2="#7b2fff" />;
-const TicTacToeLogo     = () => <AILogoBase icon="✕" name="Tic-Tac-Toe AI"  tagline="AI · GAME AGENT"            gradId="ttGrad"  c1="#00ff88" c2="#00b4d8" />;
-const PropertyPriceLogo = () => <AILogoBase icon="⌂" name="Property Price"  tagline="ML · REGRESSION"            gradId="ppGrad"  c1="#ff6a00" c2="#ffaa44" />;
+const DocClassifyLogo   = () => <AILogoBase icon="≡" name="Doc. Intelligence" tagline="NLP · EXTRACTION · REPORT"  gradId="dcGrad"  c1="#a855f7" c2="#ec4899" />;
+const CustomerSegLogo   = () => <AILogoBase icon="⬡" name="Customer Seg."     tagline="ML · CLUSTERING"           gradId="csGrad"  c1="#00e5ff" c2="#7b2fff" />;
+const TicTacToeLogo     = () => <AILogoBase icon="✕" name="Tic-Tac-Toe AI"    tagline="AI · GAME AGENT"           gradId="ttGrad"  c1="#00ff88" c2="#00b4d8" />;
+const PropertyPriceLogo = () => <AILogoBase icon="⌂" name="Property Price"    tagline="ML · REGRESSION"           gradId="ppGrad"  c1="#ff6a00" c2="#ffaa44" />;
 
 /* ─────────────────────────────────────────────────
-   PROJECT DATA — 7 projects
-   ORDER: Web (1-3)  →  AI/ML (4-7)
-   Doc Classifier is now #4 as requested
+   PROJECT DATA — 9 projects total
+   Web: 1-2-3-4(PowerFit)  |  AI: 4(Doc)-5-6-7-8(VisionMatch)
 ───────────────────────────────────────────────── */
 const projects = [
   {
@@ -125,9 +186,9 @@ const projects = [
     live: "https://opramix.com",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "6+",    label: "Pages"   },
-      { value: "React", label: "Stack"   },
-      { value: "Live",  label: "Status"  },
+      { value: "6+",    label: "Pages"  },
+      { value: "React", label: "Stack"  },
+      { value: "Live",  label: "Status" },
     ],
     featured: true,
   },
@@ -144,9 +205,9 @@ const projects = [
     live: "https://gym-fitness-website-master.vercel.app/",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "6",     label: "Classes"  },
-      { value: "Astro", label: "Stack"    },
-      { value: "Live",  label: "Status"   },
+      { value: "6",     label: "Classes" },
+      { value: "Astro", label: "Stack"   },
+      { value: "Live",  label: "Status"  },
     ],
     featured: false,
   },
@@ -163,33 +224,71 @@ const projects = [
     live: "https://food-hotel-website-murex.vercel.app/",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "8+",   label: "Sections"  },
-      { value: "React",label: "Stack"     },
-      { value: "Live", label: "Status"    },
+      { value: "8+",   label: "Sections" },
+      { value: "React",label: "Stack"    },
+      { value: "Live", label: "Status"   },
     ],
     featured: false,
   },
   {
     id: 4,
+    LogoComponent: PowerFitLogo,
+    title: "PowerFit Gym",
+    subtitle: "Gym & Fitness Website",
+    category: "Web",
+    cat: "web",
+    accentColor: "#FFB400",
+    desc: "A bold, high-energy gym website for PowerFit — featuring strength training programs, personal training sessions, membership plans, transformation stories, and a motivational design built to convert visitors into members.",
+    tags: ["React.js", "CSS3", "JavaScript", "Responsive"],
+    live: "https://gym-roan-iota.vercel.app/",
+    github: "https://github.com/Omshikhare257",
+    stats: [
+      { value: "React", label: "Stack"  },
+      { value: "Gold",  label: "Theme"  },
+      { value: "Live",  label: "Status" },
+    ],
+    featured: false,
+  },
+  {
+    id: 5,
     LogoComponent: DocClassifyLogo,
     title: "Document Intelligence System",
     subtitle: "NLP · Extraction · Analysis · Report",
     category: "AI/ML",
     cat: "ai",
     accentColor: "#a855f7",
-    desc: "An advanced document intelligence platform for classification, deep text extraction, and automated analysis. Purpose-built for professionals such as customs officers, legal analysts, and compliance teams — upload any document, the AI classifies its type, extracts critical data fields, performs contextual analysis, and generates a downloadable structured report in seconds.",
+    desc: "An advanced document intelligence platform for classification, deep text extraction, and automated analysis. Purpose-built for customs officers, legal analysts, and compliance teams — upload any document, the AI classifies it, extracts critical data, and generates a downloadable structured report instantly.",
     tags: ["React.js", "NLP", "Python", "Text Extraction", "Report Generation", "Classification"],
     live: "https://document-classification-and-text-ex-umber.vercel.app/",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "NLP",    label: "Type"    },
-      { value: "Report", label: "Output"  },
-      { value: "Live",   label: "Status"  },
+      { value: "NLP",    label: "Type"   },
+      { value: "Report", label: "Output" },
+      { value: "Live",   label: "Status" },
     ],
     featured: false,
   },
   {
-    id: 5,
+    id: 6,
+    LogoComponent: VisionMatchLogo,
+    title: "VisionMatch",
+    subtitle: "Image Similarity AI Finder",
+    category: "AI/ML",
+    cat: "ai",
+    accentColor: "#6C63FF",
+    desc: "An AI-powered image similarity finder built with Computer Vision. Upload any image and VisionMatch uses deep learning feature extraction to find visually similar images — powered by convolutional neural networks and cosine similarity scoring.",
+    tags: ["Python", "React.js", "Computer Vision", "CNN", "OpenCV", "Cosine Similarity"],
+    live: "https://image-similarity-finder.vercel.app/",
+    github: "https://github.com/Omshikhare257",
+    stats: [
+      { value: "CV",    label: "Type"   },
+      { value: "CNN",   label: "Model"  },
+      { value: "Live",  label: "Status" },
+    ],
+    featured: false,
+  },
+  {
+    id: 7,
     LogoComponent: CustomerSegLogo,
     title: "Customer Segmentation",
     subtitle: "ML · Unsupervised Learning",
@@ -208,7 +307,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 6,
+    id: 8,
     LogoComponent: TicTacToeLogo,
     title: "Tic-Tac-Toe AI Agent",
     subtitle: "AI · Game-Based Agent",
@@ -227,7 +326,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 7,
+    id: 9,
     LogoComponent: PropertyPriceLogo,
     title: "Property Price Analysis",
     subtitle: "ML · Regression Model",

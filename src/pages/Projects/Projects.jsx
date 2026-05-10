@@ -170,7 +170,7 @@ const PropertyPriceLogo = () => <AILogoBase icon="⌂" name="Property Price"    
 
 /* ─────────────────────────────────────────────────
    PROJECT DATA — 9 projects total
-   Web: 1-2-3-4(PowerFit)  |  AI: 4(Doc)-5-6-7-8(VisionMatch)
+   Order: 1=Opramix, 2=PowerFit, 3=Frinam, 4=FitZone, then AI projects
 ───────────────────────────────────────────────── */
 const projects = [
   {
@@ -194,20 +194,20 @@ const projects = [
   },
   {
     id: 2,
-    LogoComponent: FitZoneLogo,
-    title: "FitZone Gym",
-    subtitle: "Fitness & Wellness",
+    LogoComponent: PowerFitLogo,
+    title: "PowerFit Gym",
+    subtitle: "Gym & Fitness Website",
     category: "Web",
     cat: "web",
-    accentColor: "#ff6a00",
-    desc: "High-energy gym website for FitZone. Features class schedules (HIIT, Yoga, CrossFit), 3-tier membership plans, trainer profiles, facility galleries, success stories, and a full booking flow.",
-    tags: ["Astro.js", "CSS3", "JavaScript", "Responsive"],
-    live: "https://gym-fitness-website-master.vercel.app/",
+    accentColor: "#FFB400",
+    desc: "A bold, high-energy gym website for PowerFit — featuring strength training programs, personal training sessions, membership plans, transformation stories, and a motivational design built to convert visitors into members.",
+    tags: ["React.js", "CSS3", "JavaScript", "Responsive"],
+    live: "https://gym-roan-iota.vercel.app/",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "6",     label: "Classes" },
-      { value: "Astro", label: "Stack"   },
-      { value: "Live",  label: "Status"  },
+      { value: "React", label: "Stack"  },
+      { value: "Gold",  label: "Theme"  },
+      { value: "Live",  label: "Status" },
     ],
     featured: false,
   },
@@ -232,20 +232,20 @@ const projects = [
   },
   {
     id: 4,
-    LogoComponent: PowerFitLogo,
-    title: "PowerFit Gym",
-    subtitle: "Gym & Fitness Website",
+    LogoComponent: FitZoneLogo,
+    title: "FitZone Gym",
+    subtitle: "Fitness & Wellness",
     category: "Web",
     cat: "web",
-    accentColor: "#FFB400",
-    desc: "A bold, high-energy gym website for PowerFit — featuring strength training programs, personal training sessions, membership plans, transformation stories, and a motivational design built to convert visitors into members.",
-    tags: ["React.js", "CSS3", "JavaScript", "Responsive"],
-    live: "https://gym-roan-iota.vercel.app/",
+    accentColor: "#ff6a00",
+    desc: "High-energy gym website for FitZone. Features class schedules (HIIT, Yoga, CrossFit), 3-tier membership plans, trainer profiles, facility galleries, success stories, and a full booking flow.",
+    tags: ["Astro.js", "CSS3", "JavaScript", "Responsive"],
+    live: "https://gym-fitness-website-master.vercel.app/",
     github: "https://github.com/Omshikhare257",
     stats: [
-      { value: "React", label: "Stack"  },
-      { value: "Gold",  label: "Theme"  },
-      { value: "Live",  label: "Status" },
+      { value: "6",     label: "Classes" },
+      { value: "Astro", label: "Stack"   },
+      { value: "Live",  label: "Status"  },
     ],
     featured: false,
   },

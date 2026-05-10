@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════
    PROJECTS PAGE  ·  Projects.css
    Om Shikhare Portfolio  ·  dark | light | ai
-   7 projects · Filter tabs · Internship note
+   9 projects · Filter tabs · Internship note
 ════════════════════════════════════════════════ */
 
 /* ── Section ── */
@@ -26,10 +26,7 @@
 .projects .container { position: relative; z-index: 1; }
 
 /* ── Header ── */
-.projects-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
+.projects-header { text-align: center; margin-bottom: 40px; }
 .projects-sub {
   color: var(--text-muted);
   max-width: 520px;
